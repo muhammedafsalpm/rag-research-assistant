@@ -1,0 +1,74 @@
+# -----------------------------------
+# Python
+# -----------------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.so
+
+# Virtual Env
+env/
+venv/
+.myvenv/
+.venv/
+conda-env/
+*.conda
+
+# Jupyter
+.ipynb_checkpoints/
+
+# -----------------------------------
+# FastAPI / Project Files
+# -----------------------------------
+# Environment variables
+.env
+*.env
+
+# Local database files
+*.db
+*.sqlite3
+
+# Temp files
+/tmp/
+temp/
+*.log
+
+# -----------------------------------
+# ChromaDB local storage
+# -----------------------------------
+chroma/
+chroma_db/
+index/
+chroma_index/
+vector_store/
+*.parquet
+
+# -----------------------------------
+# VSCode
+# -----------------------------------
+.vscode/
+*.code-workspace
+
+# -----------------------------------
+# OS Specific
+# -----------------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------------
+# Frontend (React/Vite)
+# -----------------------------------
+node_modules/
+dist/
+build/
+.env.local
+.env.production
+.env.development
+
+# -----------------------------------
+# AWS / Sensitive
+# -----------------------------------
+aws_credentials/
+aws_config/
