@@ -8,9 +8,18 @@ s3_client = boto3.client(
     region_name=settings.AWS_REGION,
 )
 
-def upload_to_s3(local_path, s3_key):
-    try:
-        s3_client.upload_file(local_path, settings.AWS_BUCKET_NAME, s3_key)
-        return f"s3://{settings.AWS_BUCKET_NAME}/{s3_key}"
-    except Exception as e:
-        raise RuntimeError(f"S3 upload failed: {str(e)}")
+def upload_to_s3(data, key, is_bytes=False):
+    bucket = settings.AWS_BUCKET_NAME  # <-- use your env variable
+
+    if is_bytes:
+        s3_client.put_object(
+            Bucket=bucket,
+            Key=key,
+            Body=data,
+            ContentType="application/pdf"
+        )
+        return f"s3://{bucket}/{key}"
+
+    # fallback: uploading from file path (not used now)
+    with open(data, "rb") as f:
+        s3_client.upload_fileobj(f, bucket, key)
