@@ -1,3 +1,4 @@
+# config.py
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -15,7 +16,7 @@ class Settings(BaseSettings):
     AWS_REGION: str
     AWS_BUCKET_NAME: str
 
-    # LLM settings (REQUIRED)
+    # LLM settings
     LLM_PROVIDER: str
     LLM_MODEL: str
     LLM_API_KEY: str
